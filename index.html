@@ -1,57 +1,88 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Tarun Vusirikayala | Full-Stack & AI Developer</title>
-  <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap' rel='stylesheet'>
-  <link rel='stylesheet' href='style.css'>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'></script>
-  <script src='https://cdn.jsdelivr.net/npm/typed.js@2.0.12'></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Tarun Vusirikayala - Fullstack / AI / Java Developer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Fira+Code&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery (required for template JS) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-  <canvas id='bg'></canvas>
 
-  <section id='hero'>
-    <div class='intro'>
-      <div id='logo3d'></div>
-      <h1>Tarun Vusirikayala</h1>
-      <h2><span id='typed'></span></h2>
-      <div class='socials'>
-        <a href='https://github.com/tarun1704' target='_blank'>GitHub</a>
-        <a href='https://www.linkedin.com/in/tarunvusirikayala' target='_blank'>LinkedIn</a>
-        <a href='mailto:vusirit17@gmail.com'>Email</a>
+  <!-- Header -->
+  <header id="header">
+    <img src="assets/img/profile.jpg" alt="Tarun Vusirikayala">
+    <h1>Tarun Vusirikayala</h1>
+    <h2>Fullstack / AI / Java Developer</h2>
+
+    <div class="social-links">
+      <a href="#" target="_blank">GitHub</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">Twitter</a>
+    </div>
+  </header>
+
+  <!-- Sections -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Passionate software developer with experience in AI, full-stack development, and cloud technologies.</p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <span>Java</span>
+        <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill">
+        <span>React.js</span>
+        <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>AWS</span>
+        <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
       </div>
     </div>
   </section>
 
-  <section id='about'>
-    <h2>About Me</h2>
-    <p>I’m a Full-Stack Engineer and AI Developer who builds scalable systems using Java, Spring Boot, React.js, and AWS. I specialize in integrating AI-driven automation into cloud-native applications.</p>
-  </section>
-
-  <section id='projects'>
-    <h2>Projects</h2>
-    <div class='cards'>
-      <div class='card'>
-        <h3>AI Article Simplifier</h3>
-        <p>Used transformer models and GPT APIs to simplify complex technical text.</p>
+  <section id="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <img src="assets/img/project1.png" alt="Project 1">
+        <h4>AI Chatbot</h4>
       </div>
-      <div class='card'>
-        <h3>Movie Recommendation System</h3>
-        <p>Built with AWS Personalize and S3 pipelines for real-time user suggestions.</p>
+      <div class="project-card">
+        <img src="assets/img/project2.png" alt="Project 2">
+        <h4>Cloud Dashboard</h4>
       </div>
     </div>
   </section>
 
-  <section id='contact'>
-    <h2>Contact</h2>
-    <p>Email: <a href='mailto:vusirit17@gmail.com'>vusirit17@gmail.com</a></p>
-    <p>Location: New York, USA</p>
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-box">
+      <p>Email: <a href="mailto:tarun@example.com">tarun@example.com</a></p>
+      <p>Phone: +1 123-456-7890</p>
+    </div>
   </section>
 
-  <script src='script.js'></script>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Tarun Vusirikayala | <a href="#">GitHub</a> | <a href="#">LinkedIn</a>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
