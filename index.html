@@ -1,81 +1,126 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tarun Vusirikayala — AI & Fullstack Developer</title>
-  <meta name="description" content="Portfolio of Tarun Vusirikayala — AI / Java & Fullstack developer skilled in React.js, Spring Boot, Node.js, and AWS." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarun Vusirikayala | Full-Stack Engineer | AI Enthusiast</title>
+  <meta name="description" content="Tarun Vusirikayala — Full-Stack Engineer passionate about AI, Cloud, and scalable web applications.">
+  <meta name="keywords" content="Tarun Vusirikayala, Full-stack, AI, software engineer, portfolio">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">Tarun Vusirikayala</h1>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+  <header id="header" class="header-tops">
+    <div class="container text-center">
+      <h1><a href="#header">Tarun Vusirikayala</a></h1>
+      <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
+      <img src="assets/img/profile.jpg" class="img-fluid rounded-circle mt-3 mb-3" alt="Tarun Profile" style="width:200px;height:200px;border:3px solid #12D640;object-fit:cover;">
+      
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="Tarun_Vusirikayala_Resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
-      <button id="themeToggle" class="btn small">🌓</button>
+
+      <div class="social-links mt-3">
+        <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/tarun1704" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+        <a href="mailto:tarunvusirikayala@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
+      </div>
     </div>
   </header>
 
-  <section class="hero" id="hero">
-    <div class="container">
-      <h2>AI · Fullstack · Java Developer</h2>
-      <p class="lead">
-        Software Engineer focused on architecting scalable, AI-integrated, cloud-native web applications using React.js, Spring Boot, Node.js, and AWS.
-      </p>
+  <!-- About Section -->
+  <section id="about" class="about mt-5">
+    <div class="container text-center">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
       <p>
-        <a class="btn" href="Tarun_Vusirikayala_Resume.pdf" download>📄 Download Resume</a>
-        <a class="btn ghost" href="mailto:vusirit17@gmail.com">✉️ Contact Me</a>
-      </p>
-      <p class="muted">📞 +1 315-790-2143 · 
-        <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank">LinkedIn</a> · 
-        <a href="https://github.com/tarun1704" target="_blank">GitHub</a>
+        I’m a Full-Stack Engineer and AI enthusiast passionate about building scalable web applications and integrating modern AI solutions.
+        Skilled in React.js, Node.js, Spring Boot, and AWS. Focused on solving real-world problems through intelligent automation and efficient design.
       </p>
     </div>
   </section>
 
-  <section id="projects" class="container">
-    <h3>Highlighted Projects</h3>
-
-    <div class="project-grid">
-      <article class="project reveal">
-        <img src="assets/project1.jpg" alt="AI Content Simplification" class="project-img" />
-        <div class="project-info">
-          <h4>AI Content Simplification Platform</h4>
-          <p>Developed a web platform using Flask + React that leverages OpenAI APIs to simplify complex text automatically, reducing manual review time by ~40%.</p>
-          <p class="meta">Tech: React, Flask, OpenAI API, FastAPI, MongoDB</p>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <img src="assets/project2.jpg" alt="Movie Recommender" class="project-img" />
-        <div class="project-info">
-          <h4>Movie Recommendation System (AWS Personalize)</h4>
-          <p>Built an intelligent recommendation system using AWS Personalize and serverless Lambda functions; automated dataset pipelines for continuous learning.</p>
-          <p class="meta">Tech: AWS Personalize, Lambda, Python, React</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="contact" class="container">
-    <h3>Contact</h3>
-    <p>📧 <a href="mailto:vusirit17@gmail.com">vusirit17@gmail.com</a> | 📞 +1 315-790-2143</p>
-    <p><a href="https://github.com/tarun1704">GitHub</a> · <a href="https://www.linkedin.com/in/tarunvusirikayala">LinkedIn</a></p>
-  </section>
-
-  <footer class="site-footer">
+  <!-- Experience -->
+  <section id="experience" class="services">
     <div class="container">
-      <small>© 2025 Tarun Vusirikayala · Built with HTML · CSS · JS. Dark mode & animations added ✨</small>
-    </div>
-  </footer>
+      <div class="section-title"><h2>Experience</h2></div>
 
-  <script src="script.js"></script>
+      <div class="col-md-12 icon-box" data-aos="fade-up">
+        <h4>AI / Java Developer — SCGS Solutions</h4>
+        <h5>Jul 2024 – Present</h5>
+        <ul>
+          <li>Developed scalable AI-powered backend microservices using Spring Boot and Node.js.</li>
+          <li>Deployed and monitored solutions on AWS EC2, S3, and Lambda with Docker & Kubernetes.</li>
+        </ul>
+      </div>
+
+      <div class="col-md-12 icon-box mt-4" data-aos="fade-up">
+        <h4>Graduate Assistant — SUNY Institute of Technology</h4>
+        <h5>Sep 2023 – May 2024</h5>
+        <ul>
+          <li>Built responsive dashboards and CMS platforms with React.js, Node.js, and MongoDB.</li>
+          <li>Integrated automation features that improved workflow efficiency by 30%.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="services">
+    <div class="container">
+      <div class="section-title"><h2>Skills</h2></div>
+      <ul>
+        <li><strong>Languages:</strong> Java, Python, JavaScript, TypeScript, SQL</li>
+        <li><strong>Frameworks:</strong> React.js, Node.js, Spring Boot, Express.js</li>
+        <li><strong>Cloud & Tools:</strong> AWS, Docker, GitHub Actions, Kubernetes</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container text-center">
+      <div class="section-title"><h2>Contact</h2></div>
+      <p>Email: <a href="mailto:tarunvusirikayala@gmail.com">tarunvusirikayala@gmail.com</a></p>
+      <p>Location: New York, USA</p>
+    </div>
+  </section>
+
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+
+  <script>
+    var typed = new Typed('.typing', {
+      strings: ["Full-Stack Engineer", "AI Developer", "Cloud Enthusiast"],
+      loop: true,
+      typeSpeed: 65,
+      backSpeed: 60
+    });
+  </script>
 </body>
 </html>
