@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  color: white;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 body {
-  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  background-color: #0d1117;
+  color: #c9d1d9;
   overflow-x: hidden;
 }
 
@@ -27,53 +27,48 @@ section {
   justify-content: center;
 }
 
-#hero {
-  text-align: center;
-}
-
-.glow {
+h1 {
   font-size: 3rem;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px #12d640, 0 0 20px #12d640;
-}
-
-#typed {
-  font-size: 1.5rem;
-  color: #12d640;
-}
-
-.socials a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #12d640;
   font-weight: 600;
+  color: #c9d1d9;
+}
+
+h2 {
+  color: #58a6ff;
+  margin-top: 10px;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
   transition: 0.3s;
 }
-.socials a:hover {
-  color: #fff;
-}
-
-#about, #projects, #contact {
-  max-width: 900px;
-  text-align: center;
-  line-height: 1.8;
-}
+a:hover { color: #c9d1d9; }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
+  gap: 25px;
   justify-content: center;
-  gap: 30px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
+  background: #161b22;
+  border-radius: 10px;
   padding: 20px;
-  width: 260px;
-  transition: transform 0.4s ease, background 0.4s ease;
+  width: 250px;
+  transition: 0.3s ease;
+  border: 1px solid #30363d;
 }
 .card:hover {
-  transform: translateY(-10px);
-  background: rgba(18, 214, 64, 0.2);
+  transform: translateY(-6px);
+  border-color: #58a6ff;
+}
+
+.socials {
+  margin-top: 15px;
+}
+.socials a {
+  margin: 0 10px;
+  font-weight: 600;
 }
