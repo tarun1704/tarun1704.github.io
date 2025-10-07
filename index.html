@@ -1,188 +1,55 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarun Vusirikayala | Full-Stack Engineer | AI Enthusiast</title>
-  <meta name="description" content="Full-Stack & AI Developer with experience in React.js, Spring Boot, AWS, and AI integration.">
-  <meta name="keywords" content="Tarun Vusirikayala, Full Stack Developer, Java, AI, AWS, Cloud, React, Spring Boot, Portfolio">
-
-  <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarun Vusirikayala | Full-Stack Engineer & AI Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
 <body>
-  <header id="header" class="header-tops">
-    <div class="container text-center">
-      <h1><a href="#header">Tarun Vusirikayala</a></h1>
-      <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
-      <img src="assets/img/profile.jpg" class="img-fluid rounded-circle mt-3 mb-3" alt="Tarun Profile" style="width:200px;height:200px;border:3px solid #12D640;object-fit:cover;">
+  <canvas id="bg"></canvas>
 
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="Tarun Vusirikayala.pdf" target="_blank">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="social-links mt-3">
-        <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/tarun1704" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-        <a href="mailto:vusirit17@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
-      </div>
-    </div>
-  </header>
-
-  <!-- About -->
-  <section id="about" class="about mt-5">
-    <div class="container text-center">
-      <div class="section-title"><h2>About Me</h2></div>
-      <p>
-        Full-Stack Engineer and AI Developer with hands-on experience in building scalable, secure, and cloud-native applications using React.js, Spring Boot, and AWS.
-        Skilled in integrating AI models, microservices, and CI/CD pipelines for performance-driven solutions. Passionate about end-to-end system design, automation, and intelligent software delivery.
-      </p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="services">
-    <div class="container">
-      <div class="section-title"><h2>Experience</h2></div>
-
-      <div class="icon-box">
-        <h4>AI / Java Developer — SCGS Solutions</h4>
-        <h5>Jul 2024 – Present | New York, USA</h5>
-        <ul>
-          <li>Developing and deploying scalable microservices with Java, Spring Boot, and AWS Lambda for AI-driven backend systems.</li>
-          <li>Built APIs integrating AI models via LangChain and Hugging Face to automate business logic and document processing.</li>
-          <li>Containerized workloads using Docker, deployed via AWS ECS & monitored with CloudWatch.</li>
-          <li>Collaborated on cloud architecture optimization, improving service efficiency by 30%.</li>
-        </ul>
-      </div>
-
-      <div class="icon-box mt-4">
-        <h4>Graduate Assistant — SUNY Institute of Technology</h4>
-        <h5>Sep 2023 – May 2024 | Utica, NY</h5>
-        <ul>
-          <li>Developed and maintained internal tools using React.js, Node.js, and MongoDB for faculty operations.</li>
-          <li>Built web dashboards visualizing real-time academic data; integrated secure authentication using JWT.</li>
-          <li>Optimized REST APIs, improving response time by 45% and maintaining 99.9% uptime.</li>
-        </ul>
-      </div>
-
-      <div class="icon-box mt-4">
-        <h4>Software Engineer — Possible Works</h4>
-        <h5>Jan 2021 – Nov 2022 | Hyderabad, India</h5>
-        <ul>
-          <li>Built and deployed full-stack HR SaaS applications using React.js and Spring Boot, handling 50K+ daily API calls.</li>
-          <li>Automated email workflows via AWS SES and integrated CI/CD pipelines using Jenkins and Docker.</li>
-          <li>Improved application scalability by 40% through optimized database design and caching strategies with Redis.</li>
-        </ul>
+  <section id="hero">
+    <div class="intro">
+      <h1 class="glow">Tarun Vusirikayala</h1>
+      <h2><span id="typed"></span></h2>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank">LinkedIn</a>
+        <a href="https://github.com/tarun1704" target="_blank">GitHub</a>
+        <a href="mailto:vusirit17@gmail.com">Email</a>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="portfolio">
-    <div class="container">
-      <div class="section-title"><h2>Projects</h2></div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a Full-Stack Engineer and AI Enthusiast focused on building scalable, intelligent systems. I blend cloud-native microservices with AI-driven features to deliver smart, efficient solutions.</p>
+  </section>
 
-      <div class="row portfolio-container">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/project1.jpg" class="img-fluid" alt="AI Simplifier">
-            <div class="portfolio-info">
-              <h4>Solving Article Complexity Through AI</h4>
-              <p>Developed an NLP-based model to simplify technical articles using GPT and transformer models.</p>
-              <div class="portfolio-links">
-                <a href="https://github.com/tarun1704/ai-article-simplifier" target="_blank" title="GitHub"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <div class="portfolio-wrap">
-            <img src="assets/img/project2.jpg" class="img-fluid" alt="Movie Recommendation">
-            <div class="portfolio-info">
-              <h4>Movie Recommendation System using AWS Personalize</h4>
-              <p>Created an ML-based movie recommender using AWS Personalize and S3 for user-based predictions.</p>
-              <div class="portfolio-links">
-                <a href="https://github.com/tarun1704/movie-recommender" target="_blank" title="GitHub"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>AI Article Simplifier</h3>
+        <p>Transformer-based NLP model to simplify complex text using GPT APIs.</p>
+      </div>
+      <div class="card">
+        <h3>Movie Recommender System</h3>
+        <p>Built a recommendation engine using AWS Personalize with S3 data pipelines.</p>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="services">
-    <div class="container">
-      <div class="section-title"><h2>Education</h2></div>
-      <div class="icon-box">
-        <h4>Master of Science in Computer Science</h4>
-        <h5>SUNY Institute of Technology | Jan 2023 – Dec 2024</h5>
-        <ul><li>Specialization: AI, Cloud Computing, and Full-Stack Development</li></ul>
-      </div>
-
-      <div class="icon-box mt-4">
-        <h4>Bachelor of Technology in Electronics & Communication Engineering</h4>
-        <h5>CVR College of Engineering | Aug 2018 – Jun 2022</h5>
-        <ul><li>Relevant Coursework: Data Structures, Algorithms, Artificial Intelligence, Database Systems</li></ul>
-      </div>
-    </div>
+  <section id="contact">
+    <h2>Let’s Connect</h2>
+    <p>Email: <a href="mailto:vusirit17@gmail.com">vusirit17@gmail.com</a></p>
+    <p>Location: New York, USA</p>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="services">
-    <div class="container">
-      <div class="section-title"><h2>Technical Skills</h2></div>
-      <ul>
-        <li><strong>Languages:</strong> Java, Python, JavaScript, TypeScript, SQL</li>
-        <li><strong>Frameworks:</strong> React.js, Spring Boot, Node.js, Express.js, Flask</li>
-        <li><strong>Cloud & DevOps:</strong> AWS (EC2, S3, Lambda, ECS), Docker, Kubernetes, Jenkins</li>
-        <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</li>
-        <li><strong>Tools:</strong> GitHub, VS Code, IntelliJ IDEA, Postman</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="container text-center">
-      <div class="section-title"><h2>Contact</h2></div>
-      <p><strong>Email:</strong> <a href="mailto:vusirit17@gmail.com">vusirit17@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank">tarunvusirikayala</a></p>
-      <p><strong>Location:</strong> New York, USA</p>
-    </div>
-  </section>
-
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-
-  <script>
-    var typed = new Typed('.typing', {
-      strings: ["Full-Stack Engineer", "AI Developer", "Cloud Enthusiast"],
-      loop: true,
-      typeSpeed: 65,
-      backSpeed: 60
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
