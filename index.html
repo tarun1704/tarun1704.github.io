@@ -1,88 +1,168 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Tarun Vusirikayala - Fullstack / AI / Java Developer</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Fira+Code&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- jQuery (required for template JS) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarun Vusirikayala - Software Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
   <!-- Header -->
   <header id="header">
-    <img src="assets/img/profile.jpg" alt="Tarun Vusirikayala">
+    <img src="assets/profile.jpg" alt="Tarun Vusirikayala">
     <h1>Tarun Vusirikayala</h1>
-    <h2>Fullstack / AI / Java Developer</h2>
-
+    <h2>Full-Stack & AI / Java Developer | Cloud-Native Solutions</h2>
     <div class="social-links">
-      <a href="#" target="_blank">GitHub</a>
-      <a href="#" target="_blank">LinkedIn</a>
-      <a href="#" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:vusirit17@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/your-github" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </header>
 
-  <!-- Sections -->
+  <!-- Navigation -->
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- About Section -->
   <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>Passionate software developer with experience in AI, full-stack development, and cloud technologies.</p>
+    <h3 class="section-title">Professional Summary</h3>
+    <p>Software Engineer specializing in full-stack and AI development with expertise in designing cloud-native solutions. Proficient in React.js, Angular, Spring Boot, Node.js, and AWS, with hands-on experience in Docker and Kubernetes for deployment and automation. Skilled in building scalable microservices, RESTful APIs, and AI-driven applications that improve operational efficiency and user experience. Passionate about leveraging cutting-edge technologies to deliver high-performance, reliable software solutions.</p>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills">
-    <h2 class="section-title">Skills</h2>
+    <h3 class="section-title">Technical Skills</h3>
     <div class="skills">
       <div class="skill">
-        <span>Java</span>
-        <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+        <span>Java / JavaScript / Python / SQL</span>
+        <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
       </div>
       <div class="skill">
-        <span>React.js</span>
-        <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+        <span>React.js / Angular / Next.js / Redux</span>
+        <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
       </div>
       <div class="skill">
-        <span>AWS</span>
-        <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+        <span>Spring Boot / Node.js / REST APIs</span>
+        <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>AWS / Docker / Kubernetes / CI/CD</span>
+        <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Databases: PostgreSQL / MongoDB / DynamoDB / Redis</span>
+        <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
       </div>
     </div>
   </section>
 
-  <section id="portfolio">
-    <h2 class="section-title">Portfolio</h2>
+  <!-- Experience Section -->
+  <section id="experience">
+    <h3 class="section-title">Professional Experience</h3>
+
+    <div class="card resume-item">
+      <h4>AI / Java Developer</h4>
+      <h5>SCGS Solutions | East Lansing, MI | July 2024 – Present</h5>
+      <ul>
+        <li>Deployed services on AWS (EC2, Lambda, S3), ensuring high availability.</li>
+        <li>Containerized applications with Docker and supported CI/CD pipelines.</li>
+        <li>Wrote JUnit tests following TDD practices to maintain code reliability.</li>
+        <li>Enhanced AI and Java skills through collaborative training sessions.</li>
+      </ul>
+    </div>
+
+    <div class="card resume-item">
+      <h4>Graduate Assistant</h4>
+      <h5>SUNY Institute of Technology | Utica, NY | Sep 2023 – May 2024</h5>
+      <ul>
+        <li>Maintained and enhanced Gannett Gallery website using React.js, HTML, CSS, and JS.</li>
+        <li>Built modular UI components with Tailwind CSS and Bootstrap.</li>
+        <li>Developed custom CMS using Node.js and MongoDB.</li>
+        <li>Prototyped dashboards with Angular and explored Next.js for optimization.</li>
+      </ul>
+    </div>
+
+    <div class="card resume-item">
+      <h4>Software Engineer</h4>
+      <h5>Possible Works | Hyderabad, India | Jan 2021 – Nov 2022</h5>
+      <ul>
+        <li>Built backend systems with Spring Boot and Node.js for real-time KPI tracking.</li>
+        <li>Implemented Docker microservices and Kubernetes deployments for scalability.</li>
+        <li>Created real-time pipelines using Kafka and MongoDB.</li>
+        <li>Migrated legacy systems to Go microservices for performance gains.</li>
+        <li>Implemented secure JWT/OAuth2 authentication for multi-tenant users.</li>
+        <li>Used PostgreSQL and Redis for structured and in-memory data storage.</li>
+        <li>Collaborated via Bitbucket and documented workflows in Confluence.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
     <div class="portfolio-grid">
-      <div class="project-card">
-        <img src="assets/img/project1.png" alt="Project 1">
-        <h4>AI Chatbot</h4>
+      <div class="project-card card">
+        <h4>AI-Based Content Simplification Platform</h4>
+        <ul>
+          <li>Built platform using JavaScript, Python (Flask), and OpenAI APIs; reduced manual work by 40%.</li>
+          <li>Dynamic dashboards with React.js, Tailwind CSS, and Redux for real-time analysis.</li>
+          <li>Implemented REST APIs with FastAPI and MongoDB.</li>
+          <li>Integrated multimodal LLMs for text/audio/video summarization.</li>
+        </ul>
       </div>
-      <div class="project-card">
-        <img src="assets/img/project2.png" alt="Project 2">
-        <h4>Cloud Dashboard</h4>
+
+      <div class="project-card card">
+        <h4>Movie Recommendation System Using AWS Personalize</h4>
+        <ul>
+          <li>Developed collaborative filtering engine for real-time user interactions.</li>
+          <li>Automated data pipelines using AWS Lambda, S3, and CloudWatch.</li>
+          <li>Microservices with Python & Node.js, Dockerized and orchestrated via Kubernetes.</li>
+          <li>Frontend designed with React.js and Bootstrap.</li>
+        </ul>
       </div>
     </div>
   </section>
 
+  <!-- Education Section -->
+  <section id="education">
+    <h3 class="section-title">Education</h3>
+    <div class="resume-item card">
+      <h4>Master of Science in Computer Science</h4>
+      <h5>SUNY Institute of Technology | Jan 2023 – Dec 2024</h5>
+    </div>
+    <div class="resume-item card">
+      <h4>Bachelor of Technology in Electronics and Communication Engineering</h4>
+      <h5>CVR College of Engineering, India | Aug 2018 – Apr 2022</h5>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-box">
-      <p>Email: <a href="mailto:tarun@example.com">tarun@example.com</a></p>
-      <p>Phone: +1 123-456-7890</p>
+    <h3 class="section-title">Contact</h3>
+    <div class="contact-box card">
+      <p>Email: <a href="mailto:vusirit17@gmail.com">vusirit17@gmail.com</a></p>
+      <p>Phone: +1 315-790-2143</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank">linkedin.com/in/tarunvusirikayala</a></p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 Tarun Vusirikayala | <a href="#">GitHub</a> | <a href="#">LinkedIn</a>
+    &copy; 2025 Tarun Vusirikayala | Designed with ❤️
   </footer>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
