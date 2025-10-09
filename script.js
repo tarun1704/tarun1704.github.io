@@ -1,20 +1,23 @@
-﻿// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
+// Section Switching with Smooth Transition
+const navItems = document.querySelectorAll('.nav ul li');
+const sections = document.querySelectorAll('.section');
 
-// Simple fade-in animation on scroll
-const faders = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-  faders.forEach(sec => {
-    const pos = sec.getBoundingClientRect().top;
-    if (pos < window.innerHeight - 150) {
-      sec.classList.add("visible");
-    }
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const target = item.getAttribute('data-target');
+
+    // Update active nav
+    navItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+
+    // Switch section visibility
+    sections.forEach(sec => {
+      if (sec.id === target) {
+        sec.classList.add('active');
+        sec.scrollTop = 0;
+      } else {
+        sec.classList.remove('active');
+      }
+    });
   });
 });

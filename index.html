@@ -1,107 +1,119 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarun Vusirikayala | Full Stack / AI / Java Developer</title>
+  <title>Tarun Vusirikayala - AI, Fullstack & Java Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="icon" href="assets/img/favicon.png" />
 </head>
-
 <body>
-  <!-- ===== Header ===== -->
-  <header>
-    <h1>Tarun Vusirikayala</h1>
-    <h2>Full Stack | AI | Java Developer</h2>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ===== About ===== -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a results-driven Full Stack Developer with expertise in Java, Spring Boot, React.js, 
-      and AI integration. I focus on building scalable cloud-based applications using AWS, 
-      Docker, and Kubernetes. Currently pursuing my MS in Computer Science at SUNY Institute 
-      of Technology (Jan 2023 – Dec 2024), I’m on OPT and open to software, AI, and cloud roles in the U.S.
-    </p>
-  </section>
-
-  <!-- ===== Experience ===== -->
-  <section id="experience">
-    <h2>Professional Experience</h2>
-
-    <div class="job">
-      <h3>AI / Java Developer — SCGS Solutions (July 2024 – Present)</h3>
-      <ul>
-        <li>Developing full-stack Java + React applications integrating AI modules.</li>
-        <li>Implemented AWS-based deployment pipeline with Docker and CI/CD automation.</li>
-        <li>Enhanced backend performance by 30% through optimized Spring Boot APIs.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <h3>Graduate Assistant — SUNY Institute of Technology (Jan 2023 – May 2024)</h3>
-      <ul>
-        <li>Assisted in machine learning projects involving predictive modeling and NLP.</li>
-        <li>Developed Python automation scripts for grading and report generation.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <h3>Software Engineer — Possible Works (2020 – 2022)</h3>
-      <ul>
-        <li>Built internal HR automation systems using Spring Boot and React.js.</li>
-        <li>Reduced manual workflows by 40% through REST API integration.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== Projects ===== -->
-  <section id="projects">
-    <h2>Key Projects</h2>
-
-    <div class="project">
-      <h3>AI-Powered Movie Recommendation System</h3>
-      <p>Built with Python, Flask, and Machine Learning. Deployed on AWS EC2 with Docker.</p>
-      <a href="https://github.com/tarunvusirikayala/Movie_Recommendation" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>Cloud Portfolio Website</h3>
-      <p>Responsive personal portfolio built with HTML, CSS, and JS. Deployed via GitHub Pages.</p>
-    </div>
-  </section>
-
-  <!-- ===== Skills ===== -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul class="skills">
-      <li>Java, Spring Boot, React.js, Node.js</li>
-      <li>Python, Flask, Machine Learning</li>
-      <li>AWS, Docker, Kubernetes</li>
-      <li>Git, CI/CD, REST APIs</li>
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul>
+      <li data-target="home" class="active">Home</li>
+      <li data-target="about">About</li>
+      <li data-target="skills">Skills</li>
+      <li data-target="experience">Experience</li>
+      <li data-target="projects">Projects</li>
+      <li data-target="education">Education</li>
+      <li data-target="contact">Contact</li>
     </ul>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="section active">
+    <div class="content-wrapper">
+      <h1>Hi, I’m Tarun Vusirikayala</h1>
+      <p>AI, Fullstack & Java Developer</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/tarunvusirikayala" target="_blank">LinkedIn</a>
+        <a href="https://github.com/tarun1704" target="_blank">GitHub</a>
+      </div>
+    </div>
   </section>
 
-  <!-- ===== Contact ===== -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:vusirit@sunypoly.edu">vusirit@sunypoly.edu</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/tarunvusirikayala" target="_blank">linkedin.com/in/tarunvusirikayala</a></p>
-    <p>GitHub: <a href="https://github.com/tarunvusirikayala" target="_blank">github.com/tarunvusirikayala</a></p>
+  <section id="about" class="section">
+    <div class="content-wrapper">
+      <h2>About Me</h2>
+      <p>Software Engineer focused on architecting robust cloud-native solutions, meeting complex business needs. Deep expertise in frontend and backend technologies, notably React.js, Angular, Spring Boot, and Node.js, complemented by skilled deployment of AWS services and Docker for reliability and excellence in automation.</p>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Tarun Vusirikayala. Built with ❤️ and hosted on GitHub Pages.</p>
-  </footer>
+  <section id="skills" class="section">
+    <div class="content-wrapper">
+      <h2>Skills</h2>
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <span class="skill">Java</span><span class="skill">JavaScript</span><span class="skill">Python</span>
+        <span class="skill">SQL</span><span class="skill">HTML5</span><span class="skill">CSS3</span>
+      </div>
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <span class="skill">React.js</span><span class="skill">Angular</span><span class="skill">Next.js</span>
+        <span class="skill">Bootstrap</span><span class="skill">Tailwind CSS</span><span class="skill">Redux</span>
+      </div>
+      <div class="skill-group">
+        <h3>Backend</h3>
+        <span class="skill">Spring Boot</span><span class="skill">Node.js</span><span class="skill">Flask</span>
+        <span class="skill">FastAPI</span><span class="skill">REST APIs</span><span class="skill">Microservices</span>
+      </div>
+      <div class="skill-group">
+        <h3>Cloud / DevOps</h3>
+        <span class="skill">AWS</span><span class="skill">Docker</span><span class="skill">Kubernetes</span>
+        <span class="skill">Jenkins</span><span class="skill">GitHub Actions</span><span class="skill">NGINX</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="content-wrapper">
+      <h2>Experience</h2>
+      <div class="job">
+        <h3>AI/Java Developer | SCGS Solutions, MI</h3>
+        <span>July 2024 – Present</span>
+        <ul>
+          <li>Deployed services on AWS (EC2, Lambda, S3), managing infrastructure for reliability.</li>
+          <li>Containerized applications with Docker; implemented CI/CD workflows.</li>
+          <li>Applied JUnit for testing under TDD practices.</li>
+          <li>Enhanced AI and Java proficiency via Dailyinfo.ai training sessions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="content-wrapper">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Solving Article Complexity Through AI</h3>
+        <ul>
+          <li>Built AI content simplification platform using JS, Flask, and OpenAI APIs.</li>
+          <li>Automated parsing & summarization using LLMs reducing manual effort by 40%.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="content-wrapper">
+      <h2>Education</h2>
+      <ul>
+        <li>M.S. in Computer Science | SUNY Institute of Technology | Jan 2023 – Dec 2024</li>
+        <li>B.Tech in Electronics & Communication | CVR College of Engineering | 2018 – 2022</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="content-wrapper">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:vusirit17@gmail.com">vusirit17@gmail.com</a></p>
+      <p>Phone: +1 315-790-2143</p>
+      <a class="resume-btn" href="https://drive.google.com/file/d/1wCH-5WZkjIyY83W8jjfhTxVE_6Aeo2j-/view?usp=sharing" target="_blank">Download Resume</a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
