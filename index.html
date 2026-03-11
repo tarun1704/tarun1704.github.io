@@ -226,7 +226,7 @@ footer a{color:var(--green);text-decoration:none}
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="https://drive.google.com/file/d/1wCH-5WZkjIyY83W8jjfhTxVE_6Aeo2j-/view?usp=sharing" target="_blank">Resume ↗</a>
+  <a class="nav-cta" href="./Tarun_Vusirikayala.pdf" target="_blank">Resume ↗</a>
 </nav>
 
 <section id="home">
@@ -601,7 +601,7 @@ const CMDS={
   experience:'<span style="color:var(--white)">Work History:</span>\n  2025–Now   → Software Engineer @ Optum (UHG)\n  2024       → AI/Java Dev @ SCGS Solutions\n  2023–2024  → Graduate Assistant @ SUNY IT\n  2021–2022  → Software Engineer @ OpenText\n  2021       → SWE Intern @ Accolite',
   projects:'<span style="color:var(--white)">Featured Projects:</span>\n  01 → AI Article Complexity Solver (40% effort reduction)\n  02 → Cost-Aware Analytics Engine (87% Snowflake cost cut)\n  03 → Movie Recommendation System (AWS Personalize)',
   contact:'<span style="color:var(--white)">Contact:</span>\n  Email    → vusirit17@gmail.com\n  Phone    → +1 315-790-2143\n  LinkedIn → /in/tarunvusirikayala\n  GitHub   → github.com/tarun1704',
-  resume:'Opening resume... <a href="https://drive.google.com/file/d/1wCH-5WZkjIyY83W8jjfhTxVE_6Aeo2j-/view?usp=sharing" target="_blank" style="color:var(--cyan)">click here if it does not open ↗</a>'
+  resume:'Opening resume... <a href="./Tarun_Vusirikayala.pdf" target="_blank" style="color:var(--cyan)">click here if it does not open ↗</a>'
 };
 const jokes=['Why do programmers prefer dark mode?\n→ Because light attracts bugs. 🐛','A SQL query walks into a bar and asks two tables:\n→ "Can I join you?"\n\n"Sorry, we\'re already joined."','There are 10 types of people:\n→ Those who understand binary, and those who don\'t.'];
 let ji=0;
@@ -610,7 +610,7 @@ function runCmd(cmd){
   if(c==='clear'){out.innerHTML='';return}
   if(c==='exit'){closeTerminal();return}
   let res=c==='joke'?`<span style="color:var(--white)">${jokes[ji++%jokes.length]}</span>`:CMDS[c]||(c===''?null:`<span style="color:#ff6b6b">command not found: ${c}</span> — type <span style="color:var(--white)">help</span>`);
-  if(c==='resume')window.open('https://drive.google.com/file/d/1wCH-5WZkjIyY83W8jjfhTxVE_6Aeo2j-/view?usp=sharing','_blank');
+  if(c==='resume')window.open('./Tarun_Vusirikayala.pdf','_blank');
   if(res===null)return;
   out.innerHTML+=`<span style="color:var(--text)">$</span> <span style="color:var(--white)">${cmd}</span>\n${res}\n\n`;
   out.scrollTop=out.scrollHeight;
