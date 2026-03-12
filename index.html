@@ -88,18 +88,27 @@ section{position:relative;z-index:1;padding:6rem 2rem 5rem}
 .t-badge{display:inline-block;margin-left:.5rem;font-size:.58rem;padding:.1rem .45rem;background:rgba(0,230,118,.12);border:1px solid var(--green);border-radius:3px;color:var(--green);letter-spacing:1px;vertical-align:middle}
 
 #skills{background:var(--bg)}
-.skill-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
-.sf-btn{padding:.3rem .8rem;background:transparent;border:1px solid var(--border);border-radius:20px;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s}
-.sf-btn:hover,.sf-btn.active{background:var(--green);color:#000;border-color:var(--green)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.5rem}
-.skill-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.4rem;transition:all .3s}
-.skill-card.hidden{opacity:.15;transform:scale(.97)}
-.skill-card:hover{border-color:var(--border2);box-shadow:0 0 28px var(--gdim)}
-.sk-icon{font-size:1.4rem;margin-bottom:.7rem}
-.sk-cat{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:.9rem}
-.sk-tags{display:flex;flex-wrap:wrap;gap:.35rem}
-.sk-tag{font-size:.65rem;padding:.22rem .55rem;background:rgba(0,230,118,.05);border:1px solid rgba(0,230,118,.18);border-radius:3px;color:var(--text2);transition:all .2s}
-.sk-tag:hover{background:var(--gdim);color:var(--green);border-color:var(--green)}
+.skill-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.sk-tab{padding:.4rem 1.1rem;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:.5rem}
+.sk-tab:hover{border-color:var(--border2);color:var(--text2)}
+.sk-tab.active{background:var(--green);color:#000;border-color:var(--green);font-weight:600}
+.sk-tab .tab-icon{font-size:.85rem}
+.sk-panels{position:relative;min-height:280px}
+.sk-panel{display:none;animation:panelIn .3s ease}
+.sk-panel.active{display:block}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.sk-panel-inner{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem}
+.sk-panel-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
+.sk-panel-icon{font-size:2rem}
+.sk-panel-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white)}
+.sk-panel-sub{font-size:.72rem;color:var(--text);letter-spacing:1px;margin-top:.1rem}
+.sk-pills{display:flex;flex-wrap:wrap;gap:.7rem}
+.sk-pill{padding:.45rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:4px;color:var(--text2);font-family:'IBM Plex Mono',monospace;font-size:.72rem;transition:all .2s;cursor:default;position:relative;overflow:hidden}
+.sk-pill::before{content:'';position:absolute;inset:0;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .2s;z-index:0}
+.sk-pill:hover::before{transform:scaleX(1)}
+.sk-pill:hover{color:#000;border-color:var(--green);transform:translateY(-2px);box-shadow:0 6px 18px var(--gglow)}
+.sk-pill span{position:relative;z-index:1}
+.sk-pill.highlight{border-color:var(--green);color:var(--green)}
 
 #experience{background:var(--bg2)}
 .timeline{position:relative;padding-left:2px}
@@ -136,6 +145,11 @@ section{position:relative;z-index:1;padding:6rem 2rem 5rem}
 .metric-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--green);line-height:1}
 .metric-label{font-size:.58rem;color:var(--text);letter-spacing:1px;text-transform:uppercase}
 .proj-tech{margin-top:auto;padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:.35rem;border-top:1px solid var(--border)}
+.proj-mockup{width:100%;border-radius:8px;overflow:hidden;margin-bottom:1.2rem;border:1px solid var(--border);position:relative;background:var(--bg3)}
+.proj-mockup svg{width:100%;height:auto;display:block}
+.proj-mockup .mock-bar{display:flex;align-items:center;gap:.4rem;padding:.45rem .7rem;background:rgba(0,0,0,.4);border-bottom:1px solid var(--border)}
+.mock-dot{width:8px;height:8px;border-radius:50%}
+.mock-url{flex:1;height:14px;background:rgba(255,255,255,.05);border-radius:3px;margin-left:.4rem}
 .p-tag{font-size:.62rem;padding:.18rem .5rem;background:var(--cdim);border:1px solid rgba(24,255,255,.18);border-radius:3px;color:var(--cyan)}
 
 #education{background:var(--bg2)}
@@ -175,9 +189,6 @@ section{position:relative;z-index:1;padding:6rem 2rem 5rem}
 .term-dot{width:12px;height:12px;border-radius:50%}
 .term-title{font-size:.7rem;color:var(--text);margin:0 auto;letter-spacing:1px}
 .term-body{padding:1.2rem;font-size:.78rem;color:var(--green);line-height:1.8;overflow-y:auto;max-height:55vh;white-space:pre-wrap}
-.term-body .dim{color:var(--text)}
-.term-body .white{color:var(--white)}
-.term-body .cyan{color:var(--cyan)}
 .term-close{font-size:.65rem;color:var(--text);cursor:pointer;transition:color .2s;background:none;border:none;font-family:'IBM Plex Mono',monospace;letter-spacing:1px}
 .term-close:hover{color:var(--green)}
 .term-input-row{display:flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;border-top:1px solid var(--border)}
@@ -296,21 +307,134 @@ footer a{color:var(--green);text-decoration:none}
 <div class="container">
   <span class="s-tag rv">// Skills</span>
   <h2 class="s-title rv d1">Tech <em>Stack</em></h2>
-  <div class="skill-filters rv d2">
-    <button class="sf-btn active" data-filter="all">All</button>
-    <button class="sf-btn" data-filter="ai">AI / ML</button>
-    <button class="sf-btn" data-filter="backend">Backend</button>
-    <button class="sf-btn" data-filter="frontend">Frontend</button>
-    <button class="sf-btn" data-filter="cloud">Cloud</button>
-    <button class="sf-btn" data-filter="data">Data</button>
+
+  <div class="skill-tabs rv d2">
+    <button class="sk-tab active" data-tab="ai"><span class="tab-icon">🤖</span>AI / ML</button>
+    <button class="sk-tab" data-tab="backend"><span class="tab-icon">⚙️</span>Backend</button>
+    <button class="sk-tab" data-tab="lang"><span class="tab-icon">⌨️</span>Languages</button>
+    <button class="sk-tab" data-tab="frontend"><span class="tab-icon">🖥️</span>Frontend</button>
+    <button class="sk-tab" data-tab="cloud"><span class="tab-icon">☁️</span>Cloud & DevOps</button>
+    <button class="sk-tab" data-tab="data"><span class="tab-icon">🗄️</span>Databases</button>
   </div>
-  <div class="skills-grid">
-    <div class="skill-card rv d1" data-cat="ai"><div class="sk-icon">🤖</div><div class="sk-cat">AI / Machine Learning</div><div class="sk-tags"><span class="sk-tag">LLMs</span><span class="sk-tag">RAG</span><span class="sk-tag">Vector Search</span><span class="sk-tag">Prompt Engineering</span><span class="sk-tag">NLP</span><span class="sk-tag">PyTorch</span><span class="sk-tag">Scikit-Learn</span><span class="sk-tag">Model Eval</span></div></div>
-    <div class="skill-card rv d2" data-cat="backend"><div class="sk-icon">⚙️</div><div class="sk-cat">Backend & APIs</div><div class="sk-tags"><span class="sk-tag">Python</span><span class="sk-tag">Java</span><span class="sk-tag">FastAPI</span><span class="sk-tag">Spring Boot</span><span class="sk-tag">Flask</span><span class="sk-tag">Node.js</span><span class="sk-tag">Go</span><span class="sk-tag">Microservices</span><span class="sk-tag">Kafka</span></div></div>
-    <div class="skill-card rv d3" data-cat="frontend"><div class="sk-icon">🖥️</div><div class="sk-cat">Frontend</div><div class="sk-tags"><span class="sk-tag">React.js</span><span class="sk-tag">Angular</span><span class="sk-tag">Next.js</span><span class="sk-tag">TypeScript</span><span class="sk-tag">Redux</span><span class="sk-tag">Tailwind CSS</span><span class="sk-tag">Bootstrap</span></div></div>
-    <div class="skill-card rv d4" data-cat="data"><div class="sk-icon">🗄️</div><div class="sk-cat">Databases</div><div class="sk-tags"><span class="sk-tag">PostgreSQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">MySQL</span><span class="sk-tag">DynamoDB</span><span class="sk-tag">Redis</span><span class="sk-tag">Snowflake</span><span class="sk-tag">BigQuery</span></div></div>
-    <div class="skill-card rv d1" data-cat="cloud"><div class="sk-icon">☁️</div><div class="sk-cat">Cloud & DevOps</div><div class="sk-tags"><span class="sk-tag">AWS</span><span class="sk-tag">Azure</span><span class="sk-tag">GCP</span><span class="sk-tag">Docker</span><span class="sk-tag">Kubernetes</span><span class="sk-tag">GitHub Actions</span><span class="sk-tag">Jenkins</span><span class="sk-tag">CI/CD</span></div></div>
-    <div class="skill-card rv d2" data-cat="backend"><div class="sk-icon">⌨️</div><div class="sk-cat">Languages</div><div class="sk-tags"><span class="sk-tag">Python</span><span class="sk-tag">Java</span><span class="sk-tag">JavaScript</span><span class="sk-tag">TypeScript</span><span class="sk-tag">Go</span><span class="sk-tag">SQL</span><span class="sk-tag">C#</span><span class="sk-tag">C++</span></div></div>
+
+  <div class="sk-panels rv d3">
+
+    <div class="sk-panel active" id="tab-ai">
+      <div class="sk-panel-inner">
+        <div class="sk-panel-header">
+          <div class="sk-panel-icon">🤖</div>
+          <div><div class="sk-panel-title">AI / Machine Learning</div><div class="sk-panel-sub">Core specialization · Used daily at Optum</div></div>
+        </div>
+        <div class="sk-pills">
+          <div class="sk-pill highlight"><span>LLMs</span></div>
+          <div class="sk-pill highlight"><span>RAG</span></div>
+          <div class="sk-pill highlight"><span>Vector Search</span></div>
+          <div class="sk-pill"><span>Prompt Engineering</span></div>
+          <div class="sk-pill"><span>NLP</span></div>
+          <div class="sk-pill"><span>PyTorch</span></div>
+          <div class="sk-pill"><span>Scikit-Learn</span></div>
+          <div class="sk-pill"><span>Model Evaluation</span></div>
+          <div class="sk-pill"><span>Hallucination Reduction</span></div>
+          <div class="sk-pill"><span>OpenAI API</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-panel" id="tab-backend">
+      <div class="sk-panel-inner">
+        <div class="sk-panel-header">
+          <div class="sk-panel-icon">⚙️</div>
+          <div><div class="sk-panel-title">Backend & APIs</div><div class="sk-panel-sub">Microservices · REST · Event-driven</div></div>
+        </div>
+        <div class="sk-pills">
+          <div class="sk-pill highlight"><span>FastAPI</span></div>
+          <div class="sk-pill highlight"><span>Spring Boot</span></div>
+          <div class="sk-pill"><span>Flask</span></div>
+          <div class="sk-pill"><span>Node.js</span></div>
+          <div class="sk-pill"><span>Kafka</span></div>
+          <div class="sk-pill"><span>Microservices</span></div>
+          <div class="sk-pill"><span>REST APIs</span></div>
+          <div class="sk-pill"><span>GraphQL</span></div>
+          <div class="sk-pill"><span>gRPC</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-panel" id="tab-lang">
+      <div class="sk-panel-inner">
+        <div class="sk-panel-header">
+          <div class="sk-panel-icon">⌨️</div>
+          <div><div class="sk-panel-title">Languages</div><div class="sk-panel-sub">Polyglot engineer · 6+ production languages</div></div>
+        </div>
+        <div class="sk-pills">
+          <div class="sk-pill highlight"><span>Python</span></div>
+          <div class="sk-pill highlight"><span>Java</span></div>
+          <div class="sk-pill highlight"><span>TypeScript</span></div>
+          <div class="sk-pill"><span>JavaScript</span></div>
+          <div class="sk-pill"><span>Go</span></div>
+          <div class="sk-pill"><span>C#</span></div>
+          <div class="sk-pill"><span>C++</span></div>
+          <div class="sk-pill"><span>SQL</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-panel" id="tab-frontend">
+      <div class="sk-panel-inner">
+        <div class="sk-panel-header">
+          <div class="sk-panel-icon">🖥️</div>
+          <div><div class="sk-panel-title">Frontend</div><div class="sk-panel-sub">Component-driven · Responsive UI</div></div>
+        </div>
+        <div class="sk-pills">
+          <div class="sk-pill highlight"><span>React.js</span></div>
+          <div class="sk-pill"><span>Angular</span></div>
+          <div class="sk-pill"><span>Next.js</span></div>
+          <div class="sk-pill"><span>Redux</span></div>
+          <div class="sk-pill"><span>Tailwind CSS</span></div>
+          <div class="sk-pill"><span>Bootstrap</span></div>
+          <div class="sk-pill"><span>HTML5 / CSS3</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-panel" id="tab-cloud">
+      <div class="sk-panel-inner">
+        <div class="sk-panel-header">
+          <div class="sk-panel-icon">☁️</div>
+          <div><div class="sk-panel-title">Cloud & DevOps</div><div class="sk-panel-sub">Multi-cloud · Containerized · CI/CD</div></div>
+        </div>
+        <div class="sk-pills">
+          <div class="sk-pill highlight"><span>AWS</span></div>
+          <div class="sk-pill highlight"><span>Azure</span></div>
+          <div class="sk-pill highlight"><span>GCP</span></div>
+          <div class="sk-pill highlight"><span>Docker</span></div>
+          <div class="sk-pill highlight"><span>Kubernetes</span></div>
+          <div class="sk-pill"><span>GitHub Actions</span></div>
+          <div class="sk-pill"><span>Jenkins</span></div>
+          <div class="sk-pill"><span>Terraform</span></div>
+          <div class="sk-pill"><span>CI/CD Pipelines</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-panel" id="tab-data">
+      <div class="sk-panel-inner">
+        <div class="sk-panel-header">
+          <div class="sk-panel-icon">🗄️</div>
+          <div><div class="sk-panel-title">Databases</div><div class="sk-panel-sub">SQL · NoSQL · Vector · Data Warehouse</div></div>
+        </div>
+        <div class="sk-pills">
+          <div class="sk-pill highlight"><span>PostgreSQL</span></div>
+          <div class="sk-pill highlight"><span>MongoDB</span></div>
+          <div class="sk-pill"><span>DynamoDB</span></div>
+          <div class="sk-pill"><span>Redis</span></div>
+          <div class="sk-pill highlight"><span>Snowflake</span></div>
+          <div class="sk-pill"><span>BigQuery</span></div>
+          <div class="sk-pill"><span>MySQL</span></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 </section>
@@ -327,11 +451,10 @@ footer a{color:var(--green);text-decoration:none}
       <div class="t-company">Optum (UnitedHealth Group) <span class="loc">· New York, NY</span></div>
       <div class="t-body">
         <ul>
-          <li>Built and maintained distributed LLM-powered backend services using Python and FastAPI on Azure, enabling internal teams to integrate generative AI into production workflows.</li>
-          <li>Implemented RAG-based pipelines with vector search and structured data sources to improve answer accuracy and reduce hallucinations in enterprise use cases.</li>
-          <li>Developed containerized AI microservices with Docker and deployed on Azure, increasing system reliability and strengthening security compliance.</li>
+          <li>Built distributed LLM-powered backend services using Python and FastAPI on Azure, enabling internal teams to integrate generative AI into production workflows.</li>
+          <li>Implemented RAG-based pipelines with vector search to improve answer accuracy and reduce hallucinations in enterprise use cases.</li>
+          <li>Developed containerized AI microservices with Docker on Azure, increasing reliability and strengthening security compliance.</li>
           <li>Integrated CI/CD pipelines with GitHub Actions, automating testing and deployment to reduce manual release overhead.</li>
-          <li>Collaborated with product and domain experts to turn business problems into deployable AI solutions, delivering functional prototypes meeting stakeholder expectations.</li>
           <li>Monitored model behavior and service performance post-deployment, contributing fixes to maintain production stability.</li>
         </ul>
       </div>
@@ -344,10 +467,9 @@ footer a{color:var(--green);text-decoration:none}
       <div class="t-company">SCGS Solutions <span class="loc">· East Lansing, MI</span></div>
       <div class="t-body collapsed">
         <ul>
-          <li>Implemented business logic and workflow components in Java Spring Boot, enabling core application functionality.</li>
-          <li>Assisted in developing and maintaining RESTful APIs within a microservices-based architecture.</li>
-          <li>Worked with OpenAI LLM APIs to support text summarization and sentiment analysis features.</li>
-          <li>Participated in API testing, debugging, and code reviews applying TDD best practices.</li>
+          <li>Implemented business logic in Java Spring Boot and worked with OpenAI LLM APIs for text summarization and sentiment analysis.</li>
+          <li>Developed and maintained RESTful APIs within a microservices architecture, applying TDD best practices.</li>
+          <li>Participated in API testing, debugging, and code reviews in an Agile/Scrum environment using JIRA.</li>
         </ul>
       </div>
       <button class="t-toggle" onclick="toggleExp(this)">[ show more ]</button>
@@ -359,10 +481,9 @@ footer a{color:var(--green);text-decoration:none}
       <div class="t-company">SUNY Institute of Technology <span class="loc">· Utica, NY</span></div>
       <div class="t-body collapsed">
         <ul>
-          <li>Maintained and enhanced the Gannett Gallery website delivering exhibition pages using HTML, CSS, JavaScript, and React.js.</li>
-          <li>Built a custom CMS with Node.js, TypeScript, and MongoDB enabling non-technical staff to manage exhibition content.</li>
-          <li>Developed reusable responsive UI components with Tailwind CSS and Bootstrap.</li>
-          <li>Prototyped admin dashboard with Angular + Redux; evaluated Next.js for static rendering improvements.</li>
+          <li>Maintained and enhanced the Gannett Gallery website using HTML, CSS, JavaScript, and React.js.</li>
+          <li>Built a custom CMS with Node.js, TypeScript, and MongoDB enabling non-technical staff to manage content.</li>
+          <li>Developed reusable responsive UI components with Tailwind CSS; prototyped admin dashboard with Angular + Redux.</li>
         </ul>
       </div>
       <button class="t-toggle" onclick="toggleExp(this)">[ show more ]</button>
@@ -374,9 +495,8 @@ footer a{color:var(--green);text-decoration:none}
       <div class="t-company">OpenText <span class="loc">· Hyderabad, India</span></div>
       <div class="t-body collapsed">
         <ul>
-          <li>Designed and implemented backend components for enterprise B2B integration platforms using Go, C#, and REST APIs, enabling faster client onboarding.</li>
-          <li>Developed high-quality multi-threaded Java-based services for stable, scalable production systems.</li>
-          <li>Built and optimized SQL queries improving data retrieval performance for transaction-heavy workflows.</li>
+          <li>Designed backend components for enterprise B2B integration platforms using Go, C#, and REST APIs, enabling faster client onboarding.</li>
+          <li>Developed multi-threaded Java-based services and optimized SQL queries for transaction-heavy workflows.</li>
           <li>Created automated test suites with pytest; set up CI/CD pipelines with Jenkins and Docker.</li>
         </ul>
       </div>
@@ -389,9 +509,9 @@ footer a{color:var(--green);text-decoration:none}
       <div class="t-company">Accolite Digital <span class="loc">· Hyderabad, India</span></div>
       <div class="t-body collapsed">
         <ul>
-          <li>Implemented REST API endpoints in Spring Boot microservices for a client-facing module, enabling new features without downtime.</li>
-          <li>Fixed backend bugs improving error handling, validation, and API responses — reducing customer support tickets.</li>
-          <li>Participated in Agile sprints, stand-ups, and code reviews helping the team deliver sprint goals on time.</li>
+          <li>Implemented REST API endpoints in Spring Boot microservices for a client-facing module without downtime.</li>
+          <li>Fixed backend bugs improving error handling and API responses, reducing customer support tickets.</li>
+          <li>Participated in Agile sprints, stand-ups, and code reviews delivering sprint goals on time.</li>
         </ul>
       </div>
       <button class="t-toggle" onclick="toggleExp(this)">[ show more ]</button>
@@ -407,61 +527,224 @@ footer a{color:var(--green);text-decoration:none}
   <div class="proj-grid">
     <div class="proj-card rv d2">
       <div class="proj-n">01</div>
+      <div class="proj-mockup">
+        <div class="mock-bar"><div class="mock-dot" style="background:#ff5f57"></div><div class="mock-dot" style="background:#febc2e"></div><div class="mock-dot" style="background:#28c840"></div><div class="mock-url"></div></div>
+        <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="420" height="200" fill="#0a1117"/>
+          <!-- Sidebar -->
+          <rect x="0" y="0" width="80" height="200" fill="#060d14"/>
+          <rect x="10" y="16" width="60" height="8" rx="2" fill="#00e676" opacity=".15"/>
+          <rect x="10" y="32" width="45" height="5" rx="2" fill="#1a2a3a"/>
+          <rect x="10" y="44" width="50" height="5" rx="2" fill="#00e676" opacity=".2"/>
+          <rect x="10" y="56" width="40" height="5" rx="2" fill="#1a2a3a"/>
+          <rect x="10" y="68" width="48" height="5" rx="2" fill="#1a2a3a"/>
+          <rect x="10" y="80" width="42" height="5" rx="2" fill="#1a2a3a"/>
+          <!-- Header bar -->
+          <rect x="80" y="0" width="340" height="28" fill="#0d1923"/>
+          <rect x="92" y="9" width="80" height="10" rx="2" fill="#1a2a3a"/>
+          <rect x="340" y="8" width="36" height="12" rx="6" fill="#00e676" opacity=".9"/>
+          <text x="349" y="17.5" font-size="6" fill="#000" font-family="monospace" font-weight="bold">RUN</text>
+          <!-- Main content area -->
+          <!-- Sentiment bar chart -->
+          <text x="92" y="50" font-size="7" fill="#00e676" font-family="monospace" opacity=".7">SENTIMENT ANALYSIS</text>
+          <rect x="92" y="55" width="140" height="5" rx="1" fill="#1a2a3a"/>
+          <rect x="92" y="55" width="98" height="5" rx="1" fill="#00e676" opacity=".8"/>
+          <text x="236" y="60" font-size="6" fill="#9ab" font-family="monospace">70%</text>
+          <rect x="92" y="65" width="140" height="5" rx="1" fill="#1a2a3a"/>
+          <rect x="92" y="65" width="42" height="5" rx="1" fill="#18ffff" opacity=".6"/>
+          <text x="236" y="70" font-size="6" fill="#9ab" font-family="monospace">30%</text>
+          <text x="92" y="80" font-size="6" fill="#9ab" font-family="monospace" opacity=".5">Positive</text>
+          <text x="120" y="80" font-size="6" fill="#9ab" font-family="monospace" opacity=".5">Neutral</text>
+          <!-- Readability score donut -->
+          <circle cx="330" cy="80" r="28" fill="none" stroke="#1a2a3a" stroke-width="6"/>
+          <circle cx="330" cy="80" r="28" fill="none" stroke="#00e676" stroke-width="6" stroke-dasharray="123 176" stroke-dashoffset="44" opacity=".85"/>
+          <text x="330" y="78" font-size="11" fill="#00e676" font-family="monospace" font-weight="bold" text-anchor="middle">72</text>
+          <text x="330" y="88" font-size="5.5" fill="#9ab" font-family="monospace" text-anchor="middle">SCORE</text>
+          <!-- Article cards -->
+          <rect x="92" y="92" width="120" height="52" rx="4" fill="#0d1923" stroke="#1a2a3a" stroke-width="1"/>
+          <rect x="100" y="100" width="70" height="5" rx="1" fill="#1a2a3a"/>
+          <rect x="100" y="110" width="90" height="4" rx="1" fill="#1a2a3a"/>
+          <rect x="100" y="118" width="80" height="4" rx="1" fill="#1a2a3a"/>
+          <rect x="100" y="128" width="50" height="10" rx="2" fill="#00e676" opacity=".15"/>
+          <text x="106" y="135" font-size="5.5" fill="#00e676" font-family="monospace">SIMPLIFIED ✓</text>
+          <rect x="220" y="92" width="120" height="52" rx="4" fill="#0d1923" stroke="#00e676" stroke-width="1" opacity=".4"/>
+          <rect x="228" y="100" width="70" height="5" rx="1" fill="#1a2a3a"/>
+          <rect x="228" y="110" width="90" height="4" rx="1" fill="#1a2a3a"/>
+          <rect x="228" y="118" width="80" height="4" rx="1" fill="#1a2a3a"/>
+          <rect x="228" y="128" width="44" height="10" rx="2" fill="#18ffff" opacity=".12"/>
+          <text x="233" y="135" font-size="5.5" fill="#18ffff" font-family="monospace">PROCESSING…</text>
+          <!-- LLM badge -->
+          <rect x="92" y="152" width="248" height="28" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="100" y="162" font-size="6" fill="#00e676" font-family="monospace" opacity=".6">LLM PIPELINE</text>
+          <rect x="100" y="166" width="220" height="4" rx="1" fill="#1a2a3a"/>
+          <rect x="100" y="166" width="160" height="4" rx="1" fill="#00e676" opacity=".5"/>
+          <text x="266" y="171" font-size="5.5" fill="#9ab" font-family="monospace">73%</text>
+        </svg>
+      </div>
       <div class="proj-cat">AI / NLP · 2024</div>
       <h3 class="proj-title">Solving Article Complexity Through AI</h3>
-      <div class="proj-desc">
-        <ul>
-          <li>Built AI content simplification platform using JavaScript, Python (Flask), and OpenAI APIs.</li>
-          <li>Automated data parsing and summarization with LLMs, reducing manual work by 40%.</li>
-          <li>Created dynamic dashboards with React.js, Tailwind CSS, and Redux for real-time sentiment insights.</li>
-          <li>Integrated multimodal LLM summarization (text/audio/video) enabling faster cross-content comprehension.</li>
-          <li>Ensured ADA-compliant accessibility; tested responsiveness with Postman and browser tools.</li>
-        </ul>
-      </div>
+      <div class="proj-desc"><ul>
+        <li>Built AI content simplification platform using JavaScript, Python (Flask), and OpenAI APIs.</li>
+        <li>Automated data parsing and summarization with LLMs, reducing manual work by 40%.</li>
+        <li>Created dynamic dashboards with React.js, Tailwind CSS, and Redux for real-time sentiment insights.</li>
+        <li>Integrated multimodal LLM summarization (text/audio/video) for faster cross-content comprehension.</li>
+        <li>Ensured ADA-compliant accessibility; tested responsiveness with Postman and browser tools.</li>
+      </ul></div>
       <div class="proj-metrics">
         <div class="metric"><div class="metric-val" data-target="40">0</div><div class="metric-label">% Manual Work Cut</div></div>
         <div class="metric"><div class="metric-val">3</div><div class="metric-label">Modalities</div></div>
       </div>
-      <div class="proj-tech">
-        <span class="p-tag">OpenAI API</span><span class="p-tag">Flask</span><span class="p-tag">FastAPI</span><span class="p-tag">React.js</span><span class="p-tag">MongoDB</span><span class="p-tag">Redux</span>
-      </div>
+      <div class="proj-tech"><span class="p-tag">OpenAI API</span><span class="p-tag">Flask</span><span class="p-tag">FastAPI</span><span class="p-tag">React.js</span><span class="p-tag">MongoDB</span><span class="p-tag">Redux</span></div>
     </div>
     <div class="proj-card rv d3">
       <div class="proj-n">02</div>
+      <div class="proj-mockup">
+        <div class="mock-bar"><div class="mock-dot" style="background:#ff5f57"></div><div class="mock-dot" style="background:#febc2e"></div><div class="mock-dot" style="background:#28c840"></div><div class="mock-url"></div></div>
+        <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="420" height="200" fill="#0a1117"/>
+          <!-- Top stats row -->
+          <rect x="10" y="10" width="90" height="42" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="18" y="24" font-size="6" fill="#9ab" font-family="monospace" opacity=".6">COST SAVED</text>
+          <text x="18" y="38" font-size="14" fill="#00e676" font-family="monospace" font-weight="bold">87%</text>
+          <rect x="110" y="10" width="90" height="42" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="118" y="24" font-size="6" fill="#9ab" font-family="monospace" opacity=".6">DAILY QUERIES</text>
+          <text x="118" y="38" font-size="14" fill="#18ffff" font-family="monospace" font-weight="bold">1.2K</text>
+          <rect x="210" y="10" width="90" height="42" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="218" y="24" font-size="6" fill="#9ab" font-family="monospace" opacity=".6">RESPONSE</text>
+          <text x="218" y="38" font-size="14" fill="#00e676" font-family="monospace" font-weight="bold">200ms</text>
+          <rect x="310" y="10" width="100" height="42" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="318" y="24" font-size="6" fill="#9ab" font-family="monospace" opacity=".6">UPTIME</text>
+          <text x="318" y="38" font-size="14" fill="#00e676" font-family="monospace" font-weight="bold">95%</text>
+          <!-- Query editor -->
+          <rect x="10" y="62" width="200" height="80" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="18" y="76" font-size="6" fill="#00e676" font-family="monospace" opacity=".6">QUERY EDITOR</text>
+          <text x="18" y="90" font-size="6.5" fill="#18ffff" font-family="monospace">SELECT</text>
+          <text x="58" y="90" font-size="6.5" fill="#9ab" font-family="monospace"> insights, cost</text>
+          <text x="18" y="101" font-size="6.5" fill="#18ffff" font-family="monospace">FROM</text>
+          <text x="48" y="101" font-size="6.5" fill="#00e676" font-family="monospace"> analytics_engine</text>
+          <text x="18" y="112" font-size="6.5" fill="#18ffff" font-family="monospace">WHERE</text>
+          <text x="53" y="112" font-size="6.5" fill="#9ab" font-family="monospace"> partition = </text>
+          <text x="118" y="112" font-size="6.5" fill="#febc2e" font-family="monospace">'2024'</text>
+          <text x="18" y="123" font-size="6.5" fill="#18ffff" font-family="monospace">LIMIT</text>
+          <text x="46" y="123" font-size="6.5" fill="#febc2e" font-family="monospace"> 1000</text>
+          <rect x="18" y="130" width="55" height="8" rx="2" fill="#00e676" opacity=".9"/>
+          <text x="26" y="136.5" font-size="5.5" fill="#000" font-family="monospace" font-weight="bold">▶ RUN QUERY</text>
+          <!-- Cost chart -->
+          <rect x="220" y="62" width="190" height="80" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="228" y="76" font-size="6" fill="#00e676" font-family="monospace" opacity=".6">COST OVER TIME</text>
+          <!-- Chart bars - before/after -->
+          <rect x="235" y="108" width="14" height="28" rx="1" fill="#ff6b6b" opacity=".5"/>
+          <rect x="253" y="116" width="14" height="20" rx="1" fill="#ff6b6b" opacity=".4"/>
+          <rect x="271" y="120" width="14" height="16" rx="1" fill="#febc2e" opacity=".5"/>
+          <rect x="289" y="124" width="14" height="12" rx="1" fill="#febc2e" opacity=".4"/>
+          <rect x="307" y="128" width="14" height="8" rx="1" fill="#00e676" opacity=".7"/>
+          <rect x="325" y="130" width="14" height="6" rx="1" fill="#00e676" opacity=".8"/>
+          <rect x="343" y="131" width="14" height="5" rx="1" fill="#00e676" opacity=".9"/>
+          <line x1="228" y1="136" x2="400" y2="136" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="228" y="145" font-size="5.5" fill="#9ab" font-family="monospace" opacity=".5">Before optimization → After</text>
+          <!-- Anomaly detection -->
+          <rect x="10" y="152" width="400" height="38" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="18" y="165" font-size="6" fill="#00e676" font-family="monospace" opacity=".6">ANOMALY DETECTION — ML MODEL ACTIVE</text>
+          <rect x="18" y="170" width="370" height="4" rx="1" fill="#1a2a3a"/>
+          <rect x="18" y="170" width="310" height="4" rx="1" fill="#00e676" opacity=".4"/>
+          <!-- Anomaly spikes -->
+          <rect x="120" y="168" width="3" height="8" rx="1" fill="#febc2e" opacity=".8"/>
+          <rect x="240" y="167" width="3" height="9" rx="1" fill="#ff6b6b" opacity=".7"/>
+          <text x="360" y="176" font-size="5.5" fill="#9ab" font-family="monospace">2 alerts</text>
+        </svg>
+      </div>
       <div class="proj-cat">AI / Analytics · 2024</div>
       <h3 class="proj-title">Intelligent Cost-Aware Text-to-Insights Analytics Engine</h3>
-      <div class="proj-desc">
-        <ul>
-          <li>Sole developer — built analytics engine cutting Snowflake spend by 87% via partition pruning.</li>
-          <li>Implemented NLP pipeline with PyTorch for text understanding on 1,000+ daily queries.</li>
-          <li>Developed ML anomaly detection models with Scikit-Learn, improving accuracy 30% on structured data.</li>
-          <li>Deployed on GCP with Kubernetes achieving 95% uptime and 200ms response time at scale.</li>
-        </ul>
-      </div>
+      <div class="proj-desc"><ul>
+        <li>Sole developer — cut Snowflake spend by 87% via partition pruning as analytics engine architect.</li>
+        <li>Built NLP pipeline with PyTorch processing 1,000+ daily queries for structured text insights.</li>
+        <li>Developed ML anomaly detection with Scikit-Learn improving accuracy 30% on structured data.</li>
+        <li>Deployed on GCP + Kubernetes achieving 95% uptime at 200ms response time.</li>
+      </ul></div>
       <div class="proj-metrics">
         <div class="metric"><div class="metric-val" data-target="87">0</div><div class="metric-label">% Cost Cut</div></div>
         <div class="metric"><div class="metric-val" data-target="95">0</div><div class="metric-label">% Uptime</div></div>
         <div class="metric"><div class="metric-val">200ms</div><div class="metric-label">Response</div></div>
       </div>
-      <div class="proj-tech">
-        <span class="p-tag">PyTorch</span><span class="p-tag">Scikit-Learn</span><span class="p-tag">Snowflake</span><span class="p-tag">GCP</span><span class="p-tag">Kubernetes</span><span class="p-tag">Python</span>
-      </div>
+      <div class="proj-tech"><span class="p-tag">PyTorch</span><span class="p-tag">Scikit-Learn</span><span class="p-tag">Snowflake</span><span class="p-tag">GCP</span><span class="p-tag">Kubernetes</span><span class="p-tag">Python</span></div>
     </div>
     <div class="proj-card rv d2">
       <div class="proj-n">03</div>
+      <div class="proj-mockup">
+        <div class="mock-bar"><div class="mock-dot" style="background:#ff5f57"></div><div class="mock-dot" style="background:#febc2e"></div><div class="mock-dot" style="background:#28c840"></div><div class="mock-url"></div></div>
+        <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="420" height="200" fill="#0a1117"/>
+          <!-- Header -->
+          <rect x="0" y="0" width="420" height="30" fill="#060d14"/>
+          <text x="14" y="19" font-size="9" fill="#00e676" font-family="monospace" font-weight="bold">🎬 CineMatch</text>
+          <rect x="180" y="8" width="120" height="14" rx="7" fill="#1a2a3a"/>
+          <text x="191" y="18" font-size="6.5" fill="#9ab" font-family="monospace">🔍 Search movies…</text>
+          <rect x="360" y="8" width="46" height="14" rx="3" fill="#00e676" opacity=".9"/>
+          <text x="367" y="17.5" font-size="6" fill="#000" font-family="monospace" font-weight="bold">For You</text>
+          <!-- Section label -->
+          <text x="14" y="46" font-size="7" fill="#9ab" font-family="monospace" opacity=".6">RECOMMENDED FOR YOU</text>
+          <!-- Movie cards row 1 -->
+          <rect x="14" y="52" width="58" height="80" rx="4" fill="#0d1923" stroke="#1a2a3a" stroke-width="1"/>
+          <rect x="14" y="52" width="58" height="52" rx="4" fill="#1a2a3a"/>
+          <rect x="22" y="62" width="42" height="32" rx="2" fill="#0a1117"/>
+          <text x="29" y="82" font-size="14" fill="#00e676">🤖</text>
+          <text x="18" y="115" font-size="5.5" fill="#white" font-family="monospace" fill="#cde">Ex Machina</text>
+          <text x="18" y="124" font-size="5" fill="#febc2e" font-family="monospace">★★★★☆</text>
+
+          <rect x="80" y="52" width="58" height="80" rx="4" fill="#0d1923" stroke="#00e676" stroke-width="1" opacity=".5"/>
+          <rect x="80" y="52" width="58" height="52" rx="4" fill="#1a2a3a"/>
+          <rect x="88" y="62" width="42" height="32" rx="2" fill="#0a1117"/>
+          <text x="95" y="82" font-size="14" fill="#18ffff">🚀</text>
+          <rect x="82" y="52" width="54" height="10" rx="2" fill="#00e676" opacity=".2"/>
+          <text x="84" y="59" font-size="5.5" fill="#00e676" font-family="monospace">▶ TOP PICK</text>
+          <text x="84" y="115" font-size="5.5" fill="#cde" font-family="monospace">Interstellar</text>
+          <text x="84" y="124" font-size="5" fill="#febc2e" font-family="monospace">★★★★★</text>
+
+          <rect x="146" y="52" width="58" height="80" rx="4" fill="#0d1923" stroke="#1a2a3a" stroke-width="1"/>
+          <rect x="146" y="52" width="58" height="52" rx="4" fill="#1a2a3a"/>
+          <rect x="154" y="62" width="42" height="32" rx="2" fill="#0a1117"/>
+          <text x="161" y="82" font-size="14" fill="#febc2e">🧠</text>
+          <text x="150" y="115" font-size="5.5" fill="#cde" font-family="monospace">A.I. 2001</text>
+          <text x="150" y="124" font-size="5" fill="#febc2e" font-family="monospace">★★★★☆</text>
+
+          <rect x="212" y="52" width="58" height="80" rx="4" fill="#0d1923" stroke="#1a2a3a" stroke-width="1"/>
+          <rect x="212" y="52" width="58" height="52" rx="4" fill="#1a2a3a"/>
+          <rect x="220" y="62" width="42" height="32" rx="2" fill="#0a1117"/>
+          <text x="227" y="82" font-size="14" fill="#9ab">🌌</text>
+          <text x="216" y="115" font-size="5.5" fill="#cde" font-family="monospace">Arrival</text>
+          <text x="216" y="124" font-size="5" fill="#febc2e" font-family="monospace">★★★★★</text>
+
+          <!-- AWS Personalize badge -->
+          <rect x="282" y="52" width="128" height="80" rx="4" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="292" y="68" font-size="6" fill="#00e676" font-family="monospace" opacity=".7">AWS PERSONALIZE</text>
+          <text x="292" y="80" font-size="5.5" fill="#9ab" font-family="monospace" opacity=".6">Model accuracy</text>
+          <rect x="292" y="84" width="100" height="5" rx="1" fill="#1a2a3a"/>
+          <rect x="292" y="84" width="88" height="5" rx="1" fill="#00e676" opacity=".7"/>
+          <text x="394" y="89" font-size="5" fill="#9ab" font-family="monospace">88%</text>
+          <text x="292" y="100" font-size="5.5" fill="#9ab" font-family="monospace" opacity=".6">Events processed</text>
+          <text x="292" y="112" font-size="10" fill="#18ffff" font-family="monospace" font-weight="bold">24.6K</text>
+          <text x="292" y="124" font-size="5.5" fill="#9ab" font-family="monospace" opacity=".5">↑ 12% this week</text>
+
+          <!-- Bottom bar -->
+          <rect x="0" y="148" width="420" height="52" fill="#060d14" stroke="#1a2a3a" stroke-width="1"/>
+          <text x="14" y="162" font-size="6" fill="#9ab" font-family="monospace" opacity=".5">BECAUSE YOU WATCHED</text>
+          <rect x="14" y="166" width="36" height="26" rx="2" fill="#1a2a3a"/>
+          <text x="22" y="183" font-size="12">🎥</text>
+          <rect x="56" y="166" width="36" height="26" rx="2" fill="#1a2a3a"/>
+          <text x="64" y="183" font-size="12">🎭</text>
+          <rect x="98" y="166" width="36" height="26" rx="2" fill="#1a2a3a"/>
+          <text x="106" y="183" font-size="12">🌠</text>
+          <text x="148" y="182" font-size="6" fill="#00e676" font-family="monospace" opacity=".6">→ 42 more recommendations ready</text>
+        </svg>
+      </div>
       <div class="proj-cat">AWS / ML · 2024</div>
       <h3 class="proj-title">Movie Recommendation System — AWS Personalize</h3>
-      <div class="proj-desc">
-        <ul>
-          <li>Built collaborative filtering recommendation engine using AWS Personalize for real-time user interactions.</li>
-          <li>Automated data import/export with AWS Lambda; datasets stored in S3, monitored via CloudWatch.</li>
-          <li>Leveraged DynamoDB for session-level interactions and RDS (PostgreSQL) for structured data.</li>
-          <li>Deployed Python/Node.js microservices on Docker + Kubernetes with a React.js frontend.</li>
-        </ul>
-      </div>
-      <div class="proj-tech">
-        <span class="p-tag">AWS Personalize</span><span class="p-tag">Lambda</span><span class="p-tag">React.js</span><span class="p-tag">Docker</span><span class="p-tag">Kubernetes</span><span class="p-tag">DynamoDB</span>
-      </div>
+      <div class="proj-desc"><ul>
+        <li>Built collaborative filtering recommendation engine using AWS Personalize for real-time interactions.</li>
+        <li>Automated data import/export with AWS Lambda; stored in S3, monitored via CloudWatch.</li>
+        <li>Deployed Python/Node.js microservices on Docker + Kubernetes with a React.js frontend.</li>
+      </ul></div>
+      <div class="proj-tech"><span class="p-tag">AWS Personalize</span><span class="p-tag">Lambda</span><span class="p-tag">React.js</span><span class="p-tag">Docker</span><span class="p-tag">Kubernetes</span><span class="p-tag">DynamoDB</span></div>
     </div>
   </div>
 </div>
@@ -558,22 +841,21 @@ function drawLines(){for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++
 function animate(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.update();p.draw()});drawLines();requestAnimationFrame(animate)}
 animate();
 
-window.addEventListener('scroll',()=>{const st=document.documentElement.scrollTop,sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('pgbar').style.width=(st/sh*100)+'%'});
-
+window.addEventListener('scroll',()=>{const st=document.documentElement.scrollTop,sh=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('pgbar').style.width=(st/sh*100)+'%'});
 document.getElementById('hbg').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));
 
 const secs=document.querySelectorAll('section'),navAs=document.querySelectorAll('.nav-links a');
-const secObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navAs.forEach(a=>a.classList.remove('act'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('act')}})},{threshold:.35});
-secs.forEach(s=>secObs.observe(s));
+const sio=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navAs.forEach(a=>a.classList.remove('act'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('act')}})},{threshold:.35});
+secs.forEach(s=>sio.observe(s));
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=a.getAttribute('href');if(t==='#')return;e.preventDefault();document.getElementById('navlinks').classList.remove('open');document.querySelector(t)?.scrollIntoView({behavior:'smooth'})})});
 
-const rvObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});
-document.querySelectorAll('.rv').forEach(r=>rvObs.observe(r));
+const rvo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(r=>rvo.observe(r));
 
-function animateCount(el,target){let c=0,dur=1500,steps=60,inc=target/steps;const t=setInterval(()=>{c=Math.min(c+inc,target);el.textContent=Math.floor(c);if(c>=target)clearInterval(t)},dur/steps)}
-const cntObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-target]').forEach(el=>animateCount(el,parseInt(el.dataset.target)));cntObs.unobserve(e.target)}})},{threshold:.4});
-document.querySelectorAll('.stats-grid,.proj-metrics').forEach(g=>cntObs.observe(g));
+function animCount(el,t){let c=0,inc=t/60;const tmr=setInterval(()=>{c=Math.min(c+inc,t);el.textContent=Math.floor(c);if(c>=t)clearInterval(tmr)},1400/60)}
+const co=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-target]').forEach(el=>animCount(el,parseInt(el.dataset.target)));co.unobserve(e.target)}})},{threshold:.4});
+document.querySelectorAll('.stats-grid,.proj-metrics').forEach(g=>co.observe(g));
 
 const phrases=['AI & LLM Engineer','RAG Systems Builder','Full-Stack Developer','Cloud & DevOps Engineer','Python & Java Expert'];
 let pi=0,ci=0,del=false;
@@ -581,29 +863,37 @@ const tel=document.getElementById('typed');
 function type(){const p=phrases[pi];if(!del){tel.textContent=p.slice(0,++ci);if(ci===p.length){del=true;setTimeout(type,1900);return}}else{tel.textContent=p.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length}}setTimeout(type,del?45:85)}
 type();
 
-document.querySelectorAll('.sf-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.sf-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.skill-card').forEach(c=>{if(f==='all'||c.dataset.cat===f)c.classList.remove('hidden');else c.classList.add('hidden')})})});
+// ── SKILL TABS ──
+document.querySelectorAll('.sk-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.sk-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.sk-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
+  });
+});
 
 function toggleExp(btn){const body=btn.previousElementSibling;const collapsed=body.classList.toggle('collapsed');btn.textContent=collapsed?'[ show more ]':'[ show less ]'}
 
 function sendMsg(){
-  const name=document.getElementById('f-name').value.trim(),email=document.getElementById('f-email').value.trim(),msg=document.getElementById('f-msg').value.trim(),st=document.getElementById('f-status');
-  st.className='form-status';
-  if(!name||!email||!msg){st.textContent='⚠ Please fill in all fields.';st.className='form-status err';return}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){st.textContent='⚠ Please enter a valid email.';st.className='form-status err';return}
-  st.textContent='✓ Opening email client...';st.className='form-status ok';
-  setTimeout(()=>{window.location.href=`mailto:vusirit17@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg+'\n\nFrom: '+name+' ('+email+')')}`},600);
+  const n=document.getElementById('f-name').value.trim(),e=document.getElementById('f-email').value.trim(),m=document.getElementById('f-msg').value.trim(),s=document.getElementById('f-status');
+  s.className='form-status';
+  if(!n||!e||!m){s.textContent='⚠ Please fill in all fields.';s.className='form-status err';return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){s.textContent='⚠ Invalid email address.';s.className='form-status err';return}
+  s.textContent='✓ Opening email client...';s.className='form-status ok';
+  setTimeout(()=>{window.location.href=`mailto:vusirit17@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(n)}&body=${encodeURIComponent(m+'\n\nFrom: '+n+' ('+e+')')}`},700);
 }
 
 const CMDS={
-  help:'<span style="color:var(--white)">Available commands:</span>\n  <span style="color:var(--cyan)">about</span>      — Who is Tarun?\n  <span style="color:var(--cyan)">skills</span>     — Tech stack\n  <span style="color:var(--cyan)">experience</span> — Work history\n  <span style="color:var(--cyan)">projects</span>   — Featured work\n  <span style="color:var(--cyan)">contact</span>    — Get in touch\n  <span style="color:var(--cyan)">resume</span>     — Open resume\n  <span style="color:var(--cyan)">clear</span>      — Clear terminal\n  <span style="color:var(--cyan)">joke</span>       — Dev joke\n  <span style="color:var(--cyan)">exit</span>       — Close',
-  about:'<span style="color:var(--white)">Tarun Vusirikayala</span> — AI / Fullstack Engineer\n<span style="color:var(--text)">Currently:</span> Software Engineer @ Optum, New York\n<span style="color:var(--text)">Specializes in:</span> LLMs, RAG pipelines, AI microservices\n<span style="color:var(--text)">Education:</span> M.S. Computer Science, SUNY Utica',
-  skills:'<span style="color:var(--white)">Core Stack:</span>\n  AI/ML    → LLMs, RAG, PyTorch, Scikit-Learn, NLP\n  Backend  → Python, Java, FastAPI, Spring Boot, Go\n  Frontend → React.js, Angular, TypeScript\n  Cloud    → AWS, Azure, GCP, Docker, Kubernetes',
-  experience:'<span style="color:var(--white)">Work History:</span>\n  2025–Now   → Software Engineer @ Optum (UHG)\n  2024       → AI/Java Dev @ SCGS Solutions\n  2023–2024  → Graduate Assistant @ SUNY IT\n  2021–2022  → Software Engineer @ OpenText\n  2021       → SWE Intern @ Accolite',
-  projects:'<span style="color:var(--white)">Featured Projects:</span>\n  01 → AI Article Complexity Solver (40% effort reduction)\n  02 → Cost-Aware Analytics Engine (87% Snowflake cost cut)\n  03 → Movie Recommendation System (AWS Personalize)',
-  contact:'<span style="color:var(--white)">Contact:</span>\n  Email    → vusirit17@gmail.com\n  Phone    → +1 315-790-2143\n  LinkedIn → /in/tarunvusirikayala\n  GitHub   → github.com/tarun1704',
-  resume:'Opening resume... <a href="./Tarun_Vusirikayala.pdf" target="_blank" style="color:var(--cyan)">click here if it does not open ↗</a>'
+  help:`<span style="color:var(--white)">Available commands:</span>\n  <span style="color:var(--cyan)">about</span>      — Who is Tarun?\n  <span style="color:var(--cyan)">skills</span>     — Tech stack\n  <span style="color:var(--cyan)">experience</span> — Work history\n  <span style="color:var(--cyan)">projects</span>   — Featured work\n  <span style="color:var(--cyan)">contact</span>    — Get in touch\n  <span style="color:var(--cyan)">resume</span>     — Open resume\n  <span style="color:var(--cyan)">clear</span>      — Clear terminal\n  <span style="color:var(--cyan)">joke</span>       — Dev joke\n  <span style="color:var(--cyan)">exit</span>       — Close`,
+  about:`<span style="color:var(--white)">Tarun Vusirikayala</span> — AI / Fullstack Engineer\n<span style="color:var(--text)">Currently:</span> Software Engineer @ Optum, New York\n<span style="color:var(--text)">Specialize:</span> LLMs, RAG, AI microservices, FastAPI\n<span style="color:var(--text)">Education :</span> M.S. Computer Science, SUNY Utica`,
+  skills:`<span style="color:var(--white)">Core Stack:</span>\n  AI/ML    → LLMs, RAG, PyTorch, Scikit-Learn, NLP\n  Backend  → Python, Java, FastAPI, Spring Boot, Go\n  Frontend → React.js, Angular, TypeScript\n  Cloud    → AWS, Azure, GCP, Docker, Kubernetes`,
+  experience:`<span style="color:var(--white)">Work History:</span>\n  2025–Now  → Software Engineer @ Optum (UHG)\n  2024      → AI/Java Dev @ SCGS Solutions\n  2023–24   → Graduate Assistant @ SUNY IT\n  2021–22   → Software Engineer @ OpenText\n  2021      → SWE Intern @ Accolite`,
+  projects:`<span style="color:var(--white)">Featured Projects:</span>\n  01 → AI Article Simplifier (40% effort reduction)\n  02 → Cost-Aware Analytics (87% Snowflake cost cut)\n  03 → Movie Recommendation System (AWS Personalize)`,
+  contact:`<span style="color:var(--white)">Contact:</span>\n  Email    → vusirit17@gmail.com\n  Phone    → +1 315-790-2143\n  LinkedIn → /in/tarunvusirikayala\n  GitHub   → github.com/tarun1704`,
+  resume:`Opening resume... <a href="./Tarun_Vusirikayala.pdf" target="_blank" style="color:var(--cyan)">click here if it doesn't open ↗</a>`
 };
-const jokes=['Why do programmers prefer dark mode?\n→ Because light attracts bugs. 🐛','A SQL query walks into a bar and asks two tables:\n→ "Can I join you?"\n\n"Sorry, we\'re already joined."','There are 10 types of people:\n→ Those who understand binary, and those who don\'t.'];
+const jokes=['Why do programmers prefer dark mode?\n→ Because light attracts bugs. 🐛','A SQL query walks into a bar, walks up to two tables:\n→ "Can I join you?"','There are 10 types of people:\n→ Those who understand binary, and those who don\'t.'];
 let ji=0;
 function runCmd(cmd){
   const out=document.getElementById('term-out'),c=cmd.trim().toLowerCase();
